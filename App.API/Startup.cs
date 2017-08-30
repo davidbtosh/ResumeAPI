@@ -28,6 +28,7 @@ namespace ResumeAPI
 
             services.AddMvc();
             
+            
             services.AddTransient<IResumeService, ResumeService>();
         }
 
