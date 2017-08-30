@@ -23,14 +23,7 @@ namespace ResumesAPI.Controllers
         [HttpGet]
         public List<Job> Get()
         {
-            //var jobs = new List<Job>
-            //{
-            //    new Job { Company = "Monash University", Project = "Victorian Cardiac Outcomes Registry (VCOR)", TimeFrame = "Apr 2017 - Present", Details = "Did stuff for Monash<br/>2nd line of stuff." },
-            //    new Job { Company = "Avant", Project = "Bizpack", TimeFrame = "Nov 2016 - Mar 2017", Details = "Did stuff for Avant<br/>2nd line of stuff." }
-            //};
-
             var jobs = _resumeSvc.GetJobs();
-
             return jobs;
         }
 
