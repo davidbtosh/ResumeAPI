@@ -1,9 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace App.DTO
 {
     public class Job
-    {
+    {   
         public string Project { get; set; }
 
         public string TimeFrame { get; set; }

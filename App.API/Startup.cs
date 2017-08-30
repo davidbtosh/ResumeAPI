@@ -28,6 +28,7 @@ namespace ResumeAPI
 
             services.AddMvc();
             
+            //services.AddDbContext<MtoshDbContext>
             
             services.AddTransient<IResumeService, ResumeService>();
         }

@@ -8,13 +8,12 @@ namespace App.DataAccess
 {
     public class MtoshDbContext : DbContext
     {
-        //public MtoshDbContext() : base("name=conn")
+        //public MtoshDbContext(DbContextOptions<MtoshDbContext> options) : base(options)
         //{
-
         //}
 
 
-        public virtual DbSet<Job> Jobs {get; set;}
+        public DbSet<Job> Jobs {get; set;}
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -23,7 +22,12 @@ namespace App.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"tcp:mtosh.database.windows.net,1433;Initial Catalog=mtosh_resume_db;Persist Security Info=False;User ID=davidbtosh;Password=R1ch0M@n;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer(@"Data Source=mtosh.database.windows.net;Initial Catalog=mtosh_resume_db;Persist Security Info=False;User ID=davidbtosh;Password=R1ch0M@n;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Job>().ToTable("Job");           
         }
     }
 }
