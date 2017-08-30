@@ -4,30 +4,32 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using App.DTO;
+using App.Business;
 //using App.API.Models;
-//using App.Business;
 
 namespace ResumesAPI.Controllers
 {
     [Route("api/[controller]")]
     public class JobsController : Controller
     {
-        //private readonly IResumeService _resumeSvc;
+        private readonly IResumeService _resumeSvc;
 
-        //public JobsController(IResumeService resumeSvc)
-        //{
-        //    _resumeSvc = resumeSvc;
-        //}
+        public JobsController(IResumeService resumeSvc)
+        {
+            _resumeSvc = resumeSvc;
+        }
 
         // GET api/values
         [HttpGet]
         public List<Job> Get()
         {
-            var jobs = new List<Job>
-            {
-                new Job { Company = "Monash University", Project = "Victorian Cardiac Outcomes Registry (VCOR)", TimeFrame = "Apr 2017 - Present", Details = "Did stuff for Monash<br/>2nd line of stuff." },
-                new Job  { Company = "Avant", Project = "Bizpack", TimeFrame = "Nov 2016 - Mar 2017", Details = "Did stuff for Avant<br/>2nd line of stuff." }
-            };
+            //var jobs = new List<Job>
+            //{
+            //    new Job { Company = "Monash University", Project = "Victorian Cardiac Outcomes Registry (VCOR)", TimeFrame = "Apr 2017 - Present", Details = "Did stuff for Monash<br/>2nd line of stuff." },
+            //    new Job { Company = "Avant", Project = "Bizpack", TimeFrame = "Nov 2016 - Mar 2017", Details = "Did stuff for Avant<br/>2nd line of stuff." }
+            //};
+
+            var jobs = _resumeSvc.GetJobs();
 
             return jobs;
         }

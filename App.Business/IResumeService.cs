@@ -7,6 +7,6 @@ namespace App.Business
 {
     public interface IResumeService
     {
-        //List<Job> GetJobs();
+        List<Job> GetJobs();
     }
 }
