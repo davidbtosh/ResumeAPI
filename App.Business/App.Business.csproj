@@ -4,9 +4,4 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\App.DataAccess\App.DataAccess.csproj" />
-    <ProjectReference Include="..\App.DTO\App.DTO.csproj" />
-  </ItemGroup>
-
 </Project>

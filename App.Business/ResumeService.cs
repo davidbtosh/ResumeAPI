@@ -4,15 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Business
+namespace App.Business
 {
-    public class ResumeService
+    public class ResumeService : IResumeService
     {
         private IDAO _dao;
 
         public ResumeService(IDAO dao)
         {
             _dao = dao;
+        }
+
+        public ResumeService()
+        {
+            _dao = new DAO();
         }
 
         public List<Job> GetJobs()

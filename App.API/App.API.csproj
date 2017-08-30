@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-ProductsAPI-D3EB9E71-0B06-471F-BA8E-6D3E007246CE</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
@@ -18,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\App.Business\App.Business.csproj" />
     <ProjectReference Include="..\App.DTO\App.DTO.csproj" />
   </ItemGroup>
 
