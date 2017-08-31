@@ -37,6 +37,9 @@ namespace ResumeAPI
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseCors("CorsPolicy");
+
+            app.UseStaticFiles();
+
             app.UseMvc();
         }
     }
